@@ -1,0 +1,369 @@
+@import "variables"
+
+
+html, body
+  margin: 0
+  padding: 0
+  font-family: 'Open Sans', sans-serif
+  font-size: 16px
+  @media (prefers-color-scheme: dark)
+    background-color: $color1
+    color: $color5
+  @media (prefers-color-scheme: light)
+    background-color: $color5
+    color: #333
+
+
+.button
+  background: none
+  border: 1px solid $color2
+  color: $color2
+  cursor: pointer
+  transition: 300ms
+  &:hover, &.active
+    background: $color2
+    color: $color5
+
+
+.App
+  height: 100vh
+  width: 100vw
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  text-align: center
+  background-image: url("../image/background.png")
+  background-repeat: no-repeat
+  background-size: 100% 100%
+  background-position: 100% 100%
+  header
+    position: absolute
+    top: 5px
+    right: 15%
+    .menu
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      width: 100%
+      padding: 0 20px
+      list-style: none
+      .menu__item
+        margin: 0 35px
+        a
+          color: $color1!important
+          text-decoration: none
+          font-weight: 500
+          font-size: 16px
+          line-height: 20px
+          cursor: pointer
+          transition: 300ms
+          @media (prefers-color-scheme: dark)
+            color: $color5!important
+          @media (prefers-color-scheme: light)
+            color: $color1!important
+          &:hover, &.active
+            color: #FC6011!important
+            text-decoration: none
+  .container
+    max-width: 1440px
+    width: 80%
+    margin: 0 auto
+    .button__block
+      display: flex
+      flex-direction: row
+      justify-content: space-around
+      align-items: center
+      width: 100%
+      margin: 0 auto
+      padding: 0 20px
+    .button__block_category
+      width: 210px
+      height: 75px
+      border-radius: 122px
+    .button__block__date
+      border: none
+      font-weight: 700
+      margin: 7px 30px
+      padding: 0
+      cursor: pointer
+      transition: 300ms
+      @media (prefers-color-scheme: dark)
+        color: $color5
+        &.active_day
+            border-bottom: 2px solid $color5
+      @media (prefers-color-scheme: light)
+        color: $color1
+        &.active_day
+            border-bottom: 2px solid $color1
+      &:hover, &.active
+        background: $color2!important
+        border-radius: 122px
+        margin: 0
+        padding: 7px 30px
+        @media (prefers-color-scheme: dark)
+          color: $color1
+        @media (prefers-color-scheme: light)
+          color: $color5
+
+    .card__block
+      width: 80%
+      margin: 20px auto 20px
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      align-content: space-around
+      justify-content: space-between
+      .card
+        width: 287px
+        height: 170px
+        border-radius: 16px
+        margin: 5px
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        align-content: center
+        justify-content: center
+        align-items: center
+        @media (prefers-color-scheme: dark)
+          border: 1px solid $color5-25
+        @media (prefers-color-scheme: light)
+          border: 1px solid $color1-25
+        &.add
+          flex-direction: column
+          @media (prefers-color-scheme: dark)
+            border: 1px dashed $color5-25
+          @media (prefers-color-scheme: light)
+            border: 1px dashed $color1-25
+          button
+            background: none
+            border: none
+        img
+          width: 112px
+          height: 150px
+          margin: auto auto auto 10px
+          border: 2px solid rgba(253, 144, 88, 0.5)
+          border-radius: 8px
+        .card__info
+          height: calc(100% - 20px)
+          padding: 10px
+          display: flex
+          flex-direction: column
+          flex-wrap: nowrap
+          justify-content: space-between
+          align-items: flex-start
+          h5
+            margin: 0
+          h4
+            text-align: left
+            margin: 0
+            padding: 0
+          h6
+            margin: 0
+          .button__group
+            display: flex
+            flex-direction: row
+            .button
+              border-radius: 4px
+              margin-right: 10px
+              padding: 0 12.5px
+              &.remove
+                background: $color2
+                cursor: pointer
+                padding: 2px 7px
+                transition: 300ms
+                display: flex
+                &:hover, &.active
+                  background: $color2
+                svg
+                  margin: auto 0
+    .end__block
+      .button
+        width: 240px
+        height: 47px
+        border-radius: 20px
+        position: relative
+        svg
+          position: absolute
+          top: calc(50% - 12px)
+          left: 28px
+  .wiget__add__product, .order
+    width: 100%
+    height: 100%
+    overflow: hidden
+    margin: 0
+    padding: 0
+    position: fixed
+    backdrop-filter: blur(20px)
+    display: flex
+    flex-direction: column
+    flex-wrap: nowrap
+    align-content: center
+    align-items: center
+    justify-content: center
+    @media (prefers-color-scheme: dark)
+      background: $backgroundModalDark
+    @media (prefers-color-scheme: light)
+      background: $backgroundModalLight
+    .wiget__add__product__content
+      border-radius: 20px
+      width: 930px
+      height: 462px
+      @media (prefers-color-scheme: dark)
+        background: $color1
+      @media (prefers-color-scheme: light)
+        background: $color5
+      .wiget__add__product__header
+        display: flex
+        width: 90%
+        margin: auto
+        margin-top: 2%
+        margin-left: 8%
+        justify-content: space-between
+        align-items: center
+        align-content: center
+        flex-direction: row
+        .button
+          border: none
+          background: none
+          cursor: pointer
+      .wiget__add__product__body
+        height: calc(100% - 120px)
+        padding: 15px 100px
+        position: relative
+        .react-multi-carousel-list
+          height: 100%
+          position: initial
+          .react-multiple-carousel__arrow
+            width: 66px
+            height: 66px
+            border-radius: 50%
+            background: none
+            cursor: pointer
+            transition: 300ms
+            @media (prefers-color-scheme: dark)
+              border: 1px solid $color5
+              &:before
+                color: $color5
+            @media (prefers-color-scheme: light)
+              border: 1px solid $color1
+              &:before
+                color: $color1
+            &:hover
+              transition: 300ms
+              border: 1px solid $color2
+              &:before
+                color: $color2
+            &.react-multiple-carousel__arrow--left
+              left: calc(2% + 1px)
+            &.react-multiple-carousel__arrow--right
+              right: calc(2% + 1px)
+          .react-multi-carousel-dot
+            button
+              background: transparent
+            &.react-multi-carousel-dot--active
+              button
+                background: $color2
+          .react-multi-carousel-item
+          .wiget__add__product__body__item
+            padding: 16px
+            width: calc(95% - 32px)
+            margin: 0 2.5%
+            border-radius: 16px
+            @media (prefers-color-scheme: dark)
+              border: 1px solid $color5-25
+            @media (prefers-color-scheme: light)
+              border: 1px solid $color1-25
+            .wiget__add__product__body__item__img
+              img
+                width: 198px
+                height: 122px
+                border-radius: 8px
+            .wiget__add__product__body__item__info
+              text-align: left
+              h4
+                margin: 0
+                padding: 0
+            .wiget__add__product__body__item__price
+              display: flex
+              justify-content: space-between
+              .button
+                height: 35px
+                border-radius: 8px
+    .order__body
+      min-width: 1080px
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      .order__body__cart
+        width: 65%
+        height: 600px
+        border-radius: 20px
+        padding: 25px
+        @media (prefers-color-scheme: dark)
+          background: $color1-25
+        @media (prefers-color-scheme: light)
+          background: $color5-25
+        .order__body__cart__header
+          display: flex
+          justify-content: space-between
+          align-items: center
+          align-content: center
+          flex-direction: row
+          .button
+            border: none
+            background: none
+            cursor: pointer
+        .order__body__cart__body
+          overflow-y: auto
+          max-height: calc(100% - 60px)
+          .order__body__cart__body__item
+            border-radius: 20px
+            margin-bottom: 25px
+            @media (prefers-color-scheme: dark)
+              background: $color1
+            @media (prefers-color-scheme: light)
+              background: $color5
+            .order__body__cart__body__item__header
+              height: 55px
+              text-align: left
+              padding: 0 25px
+              border-radius: 20px 20px 0 0
+              display: flex
+              @media (prefers-color-scheme: dark)
+                background: $color5-05
+              @media (prefers-color-scheme: light)
+                background: $color1-05
+            .order__body__cart__body__item__body__item
+              display: flex
+              flex-direction: row
+              flex-wrap: nowrap
+              align-items: center
+              padding: 9px 25px
+              .order__body__cart__body__item__body__item__img
+                img
+                  width: 155px
+                  height: 75px
+                  border-radius: 8px 0 0 8px
+      .order__body__info
+        width: 28%
+        height: 600px
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        flex-wrap: nowrap
+        .order__body__info__data-delivery,
+        .order__body__info__data-days,
+        .order__body__info__data-user
+          border-radius: 20px
+          @media (prefers-color-scheme: dark)
+            background: $color1
+          @media (prefers-color-scheme: light)
+            background: $color5
+        .order__body__info__data-delivery
+          height: 300px
+        .order__body__info__data-days
+            height: 100px
+        .order__body__info__data-user
+          height: 150px
